@@ -15,7 +15,8 @@ class Calculator extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Calculator App',
       color: Colors.green,
-      home: SimpleCalculator(),
+      home: SimpleCalculator(
+      ),
     );
   }
 }
@@ -38,7 +39,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
 
   String firstOperand = "0";
   String secondOperand = "0";
-  String operator = "0";
+  String operator = "";
   bool flag = false;
   String expression = "";
   double equationFontSize = 38.0;
@@ -48,7 +49,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
     setState(() {
       if(!flag && (buttonText!='+' && buttonText!='-' &&
           buttonText != '*' && buttonText
-          != '÷' )) {
+          != '/' )) {
         col2 = Colors.green;
         if(firstOperand== '0'){
           firstOperand=buttonText;
@@ -58,7 +59,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
         }
       }
       if(buttonText == '*' || buttonText
-          == '÷' || buttonText == '+' || buttonText == '-') {
+          == '/' || buttonText == '+' || buttonText == '-') {
         setState(() {
           flag = true;
           operator = buttonText;
@@ -68,7 +69,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
       if(flag == true) {
         if((buttonText!='+' && buttonText!='-' &&
             buttonText != '*' && buttonText
-            != '÷' )) {
+            != '/' )) {
           col3 = Colors.green;
           if (secondOperand == '0') {
             secondOperand = buttonText;
@@ -113,7 +114,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
       }
 
       else{
-        equationFontSize = 48.0;
+        equationFontSize = 43.0;
         resultFontSize = 38.0;
         if(equation == "0"){
           equation = buttonText;
@@ -218,9 +219,9 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
 
                     TableRow(
                         children: [
-                          buildButton("9", 1.5, Colors.black),
-                          buildButton("0", 1.5, Colors.black),
-                          buildButton("=", 1.5, Colors.black),
+                          buildButton("9", 1.62, Colors.black),
+                          buildButton("0", 1.62, Colors.black),
+                          buildButton("Clr", 1.62, Colors.black),
                         ]
                     ),
                   ],
@@ -252,7 +253,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
 
                     TableRow(
                         children: [
-                          buildButton("Clr", 1.5, Colors.black),
+                          buildButton("=", 1.62, Colors.black),
                         ]
                     ),
                   ],

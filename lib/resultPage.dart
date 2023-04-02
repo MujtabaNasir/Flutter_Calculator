@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
           child: Divider(),
         ),
         Container(
-          margin: const EdgeInsets.only(bottom: 310),
+          margin: const EdgeInsets.only(bottom: 270),
           color: Colors.green,
           child: ElevatedButton(
             onPressed: () {
